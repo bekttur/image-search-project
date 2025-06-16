@@ -3,6 +3,7 @@ import Loader from '../../ui/loader/loader';
 import { getRandomImages } from '../../services/api';
 import { Link } from 'react-router-dom';
 import SearchInput from '../../ui/search-input/search-input';
+import { motion } from 'framer-motion';
 
 const Main = () => {
   const [query, setQuery] = useState('');
@@ -28,7 +29,12 @@ const Main = () => {
   }, []);
 
   return (
-    <div className='w-full min-h-screen h-fit'>
+    <motion.div
+      initial={{ opacity: 0.5 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className='w-full min-h-screen h-fit'
+    >
       <div className='w-full min-h-[268px] bg-[url("/background.png")] bg-cover bg-no-repeat flex items-center justify-center'>
         <SearchInput
           query={query}
@@ -67,7 +73,7 @@ const Main = () => {
           )}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

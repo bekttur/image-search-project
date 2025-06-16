@@ -5,6 +5,7 @@ import Loader from '../../ui/loader/loader';
 import { Maximize } from 'lucide-react';
 import UserCard from '../../ui/user-card/user-card';
 import ImgMaximize from '../../ui/img-maximize/img-maximize';
+import { motion } from 'framer-motion';
 
 const ImageDetail = () => {
   const { id } = useParams();
@@ -43,7 +44,12 @@ const ImageDetail = () => {
   const openModal = () => setIsModalOpen(true);
 
   return (
-    <div className='w-full bg-cover bg-no-repeat flex items-start justify-center relative'>
+    <motion.div
+      initial={{ opacity: 0.5 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className='w-full bg-cover bg-no-repeat flex items-start justify-center relative'
+    >
       <div
         className='w-full max-h-screen flex flex-col items-center relative'
         style={{
@@ -79,7 +85,7 @@ const ImageDetail = () => {
       {isModalOpen && (
         <ImgMaximize image={image} setIsModalOpen={setIsModalOpen} />
       )}
-    </div>
+    </motion.div>
   );
 };
 
