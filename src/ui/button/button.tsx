@@ -1,18 +1,15 @@
-import { Heart, ArrowDownToLine, Home, Search, Bell } from 'lucide-react'; // Импортируем нужные иконки
+import { Heart, ArrowDownToLine, ArrowUp } from 'lucide-react';
 
 import type { IButtonUI } from '../../interfaces/interfaces';
 
-// Создаем объект, который будет содержать иконки с их именами
 const iconMap: { [key: string]: React.ElementType } = {
   Heart,
   ArrowDownToLine,
-  Home,
-  Search,
-  Bell,
+  ArrowUp,
 };
 
 const ButtonUI = ({ icon, title, background, border, onClick }: IButtonUI) => {
-  const IconComponent = iconMap[icon]; // Получаем компонент иконки по имени
+  const IconComponent = iconMap[icon];
 
   return (
     <button

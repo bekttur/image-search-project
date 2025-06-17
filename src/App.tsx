@@ -5,6 +5,7 @@ import Header from './modules/header/header';
 import Footer from './modules/footer/footer';
 import ImageDetail from './pages/image-detail/image-detail';
 import { FavoritesProvider } from './context/favorites-context';
+import ButtonToTop from './ui/button/button-to-top';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
+      <ButtonToTop />
     </FavoritesProvider>
   );
 }
